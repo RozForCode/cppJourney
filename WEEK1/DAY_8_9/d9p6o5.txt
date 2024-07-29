@@ -1,0 +1,44 @@
+    SEARCHING AND COUNTING
+
+find(v1.begin(),v2.begin(),41); 
+also take functions in the third argument
+if found returns iterator if not found return end point iterator
+it = find()
+if(it != v.end()) index = it-v.begin()
+
+auto it = search(v1.begin(),v1.end(),v2.begin(),v2.end()); - return value same as find 
+this function looks for sequence or continuous subarray
+
+count(v1.begin(),v1.end(),2);
+
+    REPLACING AND REMOVING
+replace(v1.begin(),v1.end(),2,4)//replaces 2 with 4
+replace_if(v1.begin(),v1,end(), is_even<int>,99)
+//all even replaced
+remove() function is similar - but it also returns an iterator that points past the element that was removed
+if it == v1.end() no element was removed
+else v1.resize(it-v1.begin())
+remove_if() -- uses predicate function
+
+unique(v1.begin(),v1.end()) - removes duplicates
+
+
+    MODIFYING ALGOS
+copy(v1.begin(),v1.end(),v2.begin())
+copy_backward(v1.begin(),v1.end(),v2.end())//same result but does it from the back
+reverse_copy() - backwardcopy
+reverse(v1.begin(),v2.end())
+
+fill(v1.begin(),v2.end()-10,100)
+
+//generate()
+generate(v2.begin(),v2.end(),[]()->{return % 100})// puts random values
+random_shuffle(v1.begin(),v1.end())
+random_shuffle(v1.begin(),v1.end(),[](int i)->int{return rand() % i;})
+// might not be in C++ lastest version ^
+#include random
+random_device rd;
+mt19937 g(rd()); //Mersenne Twister Algorithm
+// general purpose random number generator
+shuffle(v1.begin(),v1.end(),g)
+
